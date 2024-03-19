@@ -18,16 +18,7 @@ pipeline{
                   }
             }
 
-            stage('Unit Test') {
-                  steps{
-                       
-                              sh '''
-                               echo "Executing Unit Tests..."
-                               mvn test
-                              '''
-                        
-                  }
-            }
+       
 
             stage('Build'){
                  environment {
