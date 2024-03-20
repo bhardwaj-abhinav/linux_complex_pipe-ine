@@ -41,17 +41,14 @@ pipeline{
                   }
             }
 
-          
-      }
-
 
       }
- post {
+
+      post {
             always{
                   cleanWs()
             }
       }
-
 }
 
 void auditTools(){
@@ -64,10 +61,10 @@ void auditTools(){
 
 String getBuiltVersion(){
       if (params.RELEASE){
-            return env.RELEASE_VERSION
+            return env.RELEASE_VERSION + ':' + env.BUILD_NUMBER
       }
       else {
-            return env.INT_VERSION 
+            return env.INT_VERSION + 'ci:' + env.BUILD_NUMBER
       }
 }
 
